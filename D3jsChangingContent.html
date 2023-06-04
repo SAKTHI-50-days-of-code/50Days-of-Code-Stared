@@ -9,4 +9,23 @@
     <button onclick="change3()">Change with HTML</button>
     <button onclick="change4()">Change with text</button>
   </body>
-  <
+   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    function change1() {
+      let p = d3.select(".main-paragraph")
+      p.text("New Text")
+    }
+    
+    function change2() {
+      d3.selectAll("p")
+        .text("New Text 2")
+    }
+    
+    function change3(){
+      d3.select("p")
+        .html("<b>Test</b> normal")
+    }
+    function change4() {
+      d3.select("p")
+        .text("<b>Test</b> normal")
+  </script>
