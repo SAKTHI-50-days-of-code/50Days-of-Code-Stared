@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Changing Property</title>
+    </head>
+    <body>
+        <div>
+            <img id="flowerImg" src="flower.jpeg" width="400" height="500">
+        </div>
+        <div id ="text" style="font-size:40px"> This is the Flower image
+        </div>
+
+        <div>
+            <button onclik="change('cat.jpeg')">Show Flower</button>
+            <button onclick="change('rose.jpeg')">Show Rose Flower</button>
+            <button onclick="changeColor()">Change the color</button>        
+        </div>
+    </body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        function change(imgName) {
+            d3.select("#flowerImg")
+              .attr("src", imgName)
+        }
+        function changeColor(){
+            let color = d3.select("#text")
+              .style("color", "red")
+              if(color === "red") {
+                d3.select("#text")
+                  .style("color", "blue")
+              } else {
+                d3.select("#text")
+                  .style("color", "purple")
+              }
+        }
+
+
+    </script>
+</html>
