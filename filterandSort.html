@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Filter And Sort Page</title>
+    </head>
+    <body>
+        <div if="container"></div>
+    </body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        let container = d3.select("#container")
+        d3.csv("./Data/data1.csv").then(function(data1) {
+            data1.sort((a,b) => {
+                return d3.ascending(a.Name, b.Name)
+            })
+            let filtereddata = data1.filter(d => {
+                return d.Weight < 90
+            })
+        })
+
+        function showData(clients) {
+            for(let client of clients) {
+                write(client.Name + "," + client.Weight)
+            }
+        }
+        function write(text) {
+            container.append("div").text(text)
+        }
+    </script>
+</html>

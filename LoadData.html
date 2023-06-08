@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         let container = d3.select("#container")
-        d3.csv("data.csv").then(function(data)  {
+        d3.csv("./Data/data.csv").then(function(data)  {
             for(let client of data) {
                 write(client.Name)
             }
