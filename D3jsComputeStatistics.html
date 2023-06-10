@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Compute Statics Page</title>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        let container = d3.select("#container")
+        d3.csv("./Data/data1.csv").then(showData)
+
+        function write(text) {
+            container.append("div").text(text)
+        }
+
+        function showData(clients) {
+            for(let client of clients) {
+                write(client.Name + "," + client.Weight)
+            }
+            write("---------------")
+            let weightSum = d3.sum(clients, (d) => d.Weight)
+            write("Sum: " + weightSum)
+
+            let weightMean = d3.mean(clients, (d) => d.weight)
+            write("Mean: " + weightMean)
+
+            let extent = d3.extent(clients, (d) =>d.Weight)
+            write("Extent: " + extent)
+        }
+
+
+    </script>
+</html>

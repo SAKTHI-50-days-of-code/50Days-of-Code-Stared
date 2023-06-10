@@ -3,7 +3,7 @@
         <title>Filter And Sort Page</title>
     </head>
     <body>
-        <div if="container"></div>
+        <div id="container"></div>
     </body>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
@@ -13,9 +13,9 @@
                 return d3.ascending(a.Name, b.Name)
             })
             let filtereddata = data1.filter(d => {
-                return d.Weight < 90
+                return d.Weight > 90
             })
-            showData(data1)
+            showData(filtereddata)
         })
 
         function showData(clients) {
