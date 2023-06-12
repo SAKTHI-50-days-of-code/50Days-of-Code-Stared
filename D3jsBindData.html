@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Binding Data Page</title>
+</head>
+<body>
+    <div id = "container" ></div>
+    <button onclick="addNewClient()">Add</button>
+    <button onclick="removeClient()">Remove</button>
+</body>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+    let container= d3.select("#container")
+    let clients = [{
+        Name: "Client0"
+    }]
+    let count =1;
+
+    function addNewClient() {
+        clients.push({ Name: "Client" + count})
+        count +=1
+        showData(clients)
+    }
+
+    function removeClient() {
+        clients =clients.slice(0, -1)
+        count -=1
+        showData(clients)
+    }
+
+    function showData(clients) {
+        let join = container
+                    .selectAll(clients)
+                    .data(clients);
+                join.enter()
+                    .append("div")
+                    .text(d => d.Name + " - New")
+                join.exit.remove()
+                
+                join.text(d => d.Name + " :updated")
+    }
+    showData(clients)
+
+    }
+</script>
+</html>
