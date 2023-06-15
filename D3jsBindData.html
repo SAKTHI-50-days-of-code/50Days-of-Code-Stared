@@ -3,9 +3,9 @@
     <title>Binding Data Page</title>
 </head>
 <body>
-    <div id = "container" ></div>
     <button onclick="addNewClient()">Add</button>
     <button onclick="removeClient()">Remove</button>
+    <div id ="container"></div>
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
@@ -13,33 +13,33 @@
     let clients = [{
         Name: "Client0"
     }]
-    let count =1;
+    let count = 1;
 
     function addNewClient() {
         clients.push({ Name: "Client" + count})
-        count +=1
+        count += 1
         showData(clients)
     }
 
     function removeClient() {
         clients =clients.slice(0, -1)
-        count -=1
+        count -= 1
         showData(clients)
     }
 
     function showData(clients) {
         let join = container
-                    .selectAll(clients)
+                    .selectAll("div")
                     .data(clients);
                 join.enter()
                     .append("div")
                     .text(d => d.Name + " - New")
-                join.exit.remove()
+                join.exit().remove()
                 
                 join.text(d => d.Name + " :updated")
     }
     showData(clients)
 
-    }
+    
 </script>
 </html>
