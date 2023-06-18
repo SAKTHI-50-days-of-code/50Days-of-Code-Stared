@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Line char page</title>
+        <title>Line chart page</title>
     </head>
     <body>
         <svg id ="container" height="300" width="500">
-            <g id=""body" transform="translate(50px,0px)"></g>
+            <g id="body" transform="translate(50px,0px)"></g>
         </svg> 
 
     </body>
@@ -36,8 +36,8 @@
 
             body.append("g")
                 .attr("transform", "translate(0, "+bodyHeight+")")
-                .call(d3.axisBottom(xScale))
-                .tickFormate(d3.timeFormat("%b"))
+                .call(d3.axisBottom(xScale)
+                 .tickFormate(d3.timeFormat("%b")))
 
 
         }
