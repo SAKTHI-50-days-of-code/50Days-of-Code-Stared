@@ -4,10 +4,11 @@
         </title>
     </head>
     <body>
-        <svg id="container" height = 250 width="350" style="background:aliceblue"></svg>
+        <svg id="container" height = 250 width="350" style="background:aliceblue">
         <g id="body" style="transform:translate(50px,0px)"></g>
         <g id="yAxis"></g>
         <g id="xAxis"></g>
+    </svg>
     </body>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
@@ -38,13 +39,13 @@
                           .ticks(4)
                           .tickFormat(d => d + " lb")
                         d3.select("#xAxis")
-                        .attr("transform", "translate(50, 200)")
+                        .attr("transform", "translate(-50, 200)")
                         .call(xAxis)
 
             
-            let yAxis = d3.axisLeft(PositionScale)
+            let yAxis = d3.axisLeft(positionScale)
                         d3.select("#yAxis")
-                        .attr("transform", "translate(50, 0)")
+                        .attr("transform", "translate(0, 0)")
                         .call(yAxis)
         }
     </script>
