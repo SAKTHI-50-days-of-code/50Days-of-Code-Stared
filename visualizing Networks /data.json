@@ -1,0 +1,17 @@
+{
+    "nodes": [
+        {"id": "Naga"},
+        {"id": "Mahe"},
+        {"id": "Kok"},
+        {"id": "Sob"},
+        {"id": "Bhuvi"}
+    ],
+    "links": [
+        {"source": "Naga", "target": "Mahe"},
+        {"source": "Naga", "target": "Kok"},
+        {"source": "Naga", "target": "Bhuvi"},
+        {"source": "Mahe", "target": "Sob"},
+        {"source": "Naga", "target": "Sob"}
+
+    ]
+}
