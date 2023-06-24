@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Base Map page
+            Base Map page1
         </title>
     </head>
     <body>
@@ -16,7 +16,7 @@
         let body = d3.select("#body")
 
         Promise.all([
-            d3.csv("../Data/dataset.csv"),
+            d3.csv("../Data/data.csv"),
             d3.json("../Data/countries.geo.json")
         ]).then(showData)
         
@@ -44,9 +44,9 @@
                 .data(data)
                 .enter()
                 .append("circle")
-                .attr("r", 3)
+                .attr("r", 2)
                 .attr("fill", "#0055AA")
-                .style("opacity", 0.3)
+                .style("opacity", 0.5)
                 .attr("cx", d => projection([+d.Longitude, +d.Latitude]) [0])
                 .attr("cy", d => projection([+d.Longitude, +d.Latitude]) [1])
         }
