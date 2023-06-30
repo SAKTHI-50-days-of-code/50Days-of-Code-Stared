@@ -1,7 +1,6 @@
 <html>
     <head>
-        <title>
-            Base Map page
+        <title>Node and link page
         </title>
     </head>
     <body>
@@ -13,7 +12,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         let body = d3.select("#body")
-        d3.json("data.json").then(showData)
+        d3.json("./data.json").then(showData)
 
         function createElements(data){  
             let nodes = body.append("g")

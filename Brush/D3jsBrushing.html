@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Line chart page</title>
+    </head>
+    <body>
+        <svg id ="container" height="300" width="500">
+            <g id="body" transform="translate(50,0)"></g>
+        </svg> 
+
+    </body>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+         let body = d3.select("#body")
+        d3.csv("../Data/data2.csv").then(showData)
+    </script>
+</html>
