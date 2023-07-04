@@ -1,0 +1,5 @@
+Learned types of bugs.
+3 Types of bugs
+Funcational bugs - Low, High, Critical
+Visual bugs - Text alignments, Text Overlapping, etc
+Content bugs - Missing Content, Tooptips, icons, translations etc. Spelling mistake is not content bugs
